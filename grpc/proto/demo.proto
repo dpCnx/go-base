@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package demo.v1;
+
+option go_package = "proto/v1;v1";
+
+service HelloServer{
+
+  rpc SayHello(HelloRequest)returns(HelloResponse){}
+
+  rpc SendStream(HelloRequest) returns (stream HelloResponse) {};
+
+  rpc GetStream(stream HelloRequest) returns (HelloResponse) {};
+
+  rpc GetAndSend(stream HelloRequest) returns (stream HelloResponse) {};
+}
+
+message HelloRequest{
+  string name = 1;
+}
+
+message HelloResponse{
+  string msg = 1;
+}
