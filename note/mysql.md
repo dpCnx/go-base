@@ -105,5 +105,7 @@
     insert into table values(xxx);
     update table set xxx where xxx;
     delete from table where xxx;
+    
+    表的自增 id 达到上限后，再申请时它的值就不会改变，进而导致继续插入数据时报主键冲突的错误。
 ```
 

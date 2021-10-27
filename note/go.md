@@ -11,5 +11,7 @@ panic() 函数内部会产生一个关键的数据结构体 _panic
 panic() 函数内部会执行 _defer 函数链条,如果执行完了都还没有恢复 _panic的状态, 那就没得办法了, 退出进程, 打印堆栈
 _panic _defer 都是链表 都是挂在在 goroutine 之上
 panic() 之后只会执行defer函数,所以recover只会在defer中才会成效,recover函数还会改变_panic的状态
+
+chan 里面的recevq sendq 是链表(链表不需要扩容)
 ```
 
