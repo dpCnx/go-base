@@ -18,7 +18,7 @@
         如果本地队列已满256，把本地队列拿出一半，塞入全局队列 global run queue 链表结构
          
     消费:
-        p的schedtick = 61的时候，会去global run queue里面拿一个goroutine消费，其他时候正常执行。
+        p的schedtick % 61 == 0的时候，会去global run queue里面拿一个goroutine消费，其他时候正常执行。
         优先消费runnext里面的值
         然后消费local run queue 256长度的数组
         最后消费global run queue,如果global run queue里面有值，会取一半出来，执行第一个，剩余的放到本地队列，正常执行。                               

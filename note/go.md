@@ -2,7 +2,7 @@
 
 ```
 结构体里面嵌结构体只会有一个对象 如果是嵌套指针 会有多个对象
-GMP M只会休眠 不会被销毁
+GMP M只会休眠 不会被销毁 m0 只会执行主线程的代码 退出程序就退出了
 map 只会扩容 不会缩减
 
 grpc 初步判断也是短连接 只是基于http2会有复用
@@ -13,5 +13,7 @@ _panic _defer 都是链表 都是挂在在 goroutine 之上
 panic() 之后只会执行defer函数,所以recover只会在defer中才会成效,recover函数还会改变_panic的状态
 
 chan 里面的recevq sendq 是链表(链表不需要扩容)
+
+defer 老版本就是链表 1.14之后就是普通函数调用
 ```
 
