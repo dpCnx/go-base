@@ -15,5 +15,8 @@ panic() 之后只会执行defer函数,所以recover只会在defer中才会成效
 chan 里面的recevq sendq 是链表(链表不需要扩容)
 
 defer 老版本就是链表 1.14之后就是普通函数调用
+
+程序中遇到加锁的情况，goroutine--> runtime_SemacquireMutex -> sync_runtime_SemacquireMutex -> gopark ->schedule() 调度其他的goroutine
+wake:semrelearse ->readyWithTime ->ready ->runqput 就和普通的goroutine一样了
 ```
 
