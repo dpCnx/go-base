@@ -117,6 +117,5 @@
     MySQL数据是“边读边发的”  "Sending to client" 就表示服务器端的网络栈写满了
     buffer pool 对LRU算法做了改进，冷数据的全表扫描
     
-    redis  布隆过滤器的底层就是基于bitmap的  只是会经过很多次的hash  可以自己基于bitmap简单实现布隆过滤器
 ```
 
