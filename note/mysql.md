@@ -117,5 +117,15 @@
     MySQL数据是“边读边发的”  "Sending to client" 就表示服务器端的网络栈写满了
     buffer pool 对LRU算法做了改进，冷数据的全表扫描
     
+    start TRANSACTION;
+    // 没有索引  会加表锁
+    select age from d where name = "x" for update;
+    // 可以直接找到索引 加行锁
+    select age from d where id = 1 for update;
+    // 悲观锁 互斥锁 一个事务中打开 别一个事务不能在执行
+    select age from d where name = "x" for update; 
+    // 悲观锁 共享锁 一个事务中打开 别一个事务可以正常查询 但是更新会被锁住
+    select age from d where name = "x" lock in share mode;
+    
 ```
 
