@@ -78,6 +78,14 @@ func kvClient() {
 		}
 	}
 
+	// 获取所有key
+	if getResp, err := kv.Get(context.Background(), "", clientv3.WithPrefix()); err != nil {
+		log.Printf("kv get err:%v\n", err.Error())
+		return
+	} else {
+		log.Println("getResp >>", getResp.Kvs)
+	}
+
 	/*
 		clientv3.WithPrefix()
 		clientv3.WithCountOnly()
