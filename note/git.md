@@ -81,5 +81,6 @@ git checkout -t origin/daily/1.4.1
 
 #git commit --amend 可以取消上一次提交,修改完之后按esc键退出编辑状态，再按大写ZZ就可以保存退出vim编辑器
 
+git push -f
 ```
 
