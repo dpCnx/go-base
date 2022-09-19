@@ -21,5 +21,7 @@ defer 老版本就是链表 1.14之后就是普通函数调用
 wake:semrelearse ->readyWithTime ->ready ->runqput 就和普通的goroutine一样了
 
 schedt 结构体保存了调度器的信息  midle  muintptr （由空闲的工作线程组成的链表） pidle  puintptr（由空闲的 p 结构体对象组成的链表）
+
+泛型里面的波浪线指的是这种类型的衍生类型也是可以的 例如 ~int  -->  type myInt int   myInt 也是可以放入泛型中的
 ```
 
