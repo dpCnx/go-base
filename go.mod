@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/elastic/go-elasticsearch/v7 v7.14.0
-	github.com/streadway/amqp v1.0.0
+	github.com/rabbitmq/amqp091-go v1.10.0
 	go.etcd.io/etcd/api/v3 v3.5.0
 	go.etcd.io/etcd/client/v3 v3.5.0
 	google.golang.org/grpc v1.38.0
