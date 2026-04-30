@@ -13,7 +13,7 @@ func NewChatModel(ctx context.Context) model.ToolCallingChatModel {
 	chatModel, err := openai.NewChatModel(ctx, &openai.ChatModelConfig{
 		Model:       "spark-x",
 		BaseURL:     "https://spark-api-open.xf-yun.com/v2",
-		APIKey:      "rYADaYejVoqTOATJMCig:uxBfAyNWTAJDPglZHxzE",
+		APIKey:      "",
 		Temperature: &temperature,
 	})
 	if err != nil {
